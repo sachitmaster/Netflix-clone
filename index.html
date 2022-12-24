@@ -1,0 +1,856 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Netflix</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
+</head>
+<style>
+    * {
+        margin: 0px;
+        padding: 0px;
+        box-sizing: border-box;
+    }
+
+    .container1 {
+        background: url('https://cdn.mos.cms.futurecdn.net/Ps8mZvho7kJHiWnUhyUqug.png');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 100vh;
+        width: 100%;
+        border-bottom: 8px solid #222;
+    }
+
+    .navbar {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        padding-top: 1rem;
+    }
+
+    .logo {
+        width: 80%;
+        height: 10vh;
+        display: flex;
+        align-items: center;
+        overflow: hidden;
+    }
+
+    #logo {
+        width: auto;
+        height: 15vh;
+        margin-left: 3rem;
+    }
+
+    #btns {
+        width: 20%;
+        height: 10vh;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+    }
+
+    select {
+        border: none;
+        border-radius: 5px;
+        width: 30%;
+        height: 5vh;
+        text-align: center;
+        font-size: 1rem;
+        color: white;
+        background-color: black;
+        font-family: 'Roboto', sans-serif;
+    }
+
+    #signin {
+        border: none;
+        border-radius: 5px;
+        width: 30%;
+        height: 5vh;
+        background-color: rgb(229, 9, 20);
+        font-family: 'Roboto', sans-serif;
+        font-size: 1rem;
+        color: white;
+    }
+
+    #signin:hover {
+        cursor: pointer;
+    }
+
+    .content {
+        width: 100%;
+        height: 88vh;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        font-family: 'Roboto', sans-serif;
+        color: white;
+        padding: 0rem 23rem;
+    }
+
+    .heading {
+        font-size: 4rem;
+        margin-bottom: .5rem;
+    }
+
+    .para1 {
+        margin-bottom: .5rem;
+        margin-top: .5rem;
+        font-size: 2rem;
+    }
+
+    .para2 {
+        margin-bottom: .5rem;
+        margin-top: .5rem;
+        font-size: 1.3rem;
+    }
+
+    .input {
+        width: 100%;
+        display: flex;
+    }
+
+    .inputbox {
+        margin-top: 1rem;
+        height: 10vh;
+        width: 70%;
+        color: gray;
+        font-weight: bold;
+        padding-left: 1rem;
+        font-size: 1rem;
+    }
+
+    .startbtn {
+        border: none;
+        border-radius: 5px;
+        background-color: rgb(229, 9, 20);
+        font-family: 'Roboto', sans-serif;
+        font-size: 1rem;
+        height: 10vh;
+        width: 30%;
+        font-size: 2rem;
+        margin-top: 1rem;
+        color: white;
+    }
+
+    .container2 {
+        width: 100%;
+        height: auto;
+    }
+
+    .boxes1 {
+        /* border: 2px solid red; */
+        background-color: black;
+        display: flex;
+        width: 100%;
+        height: 70vh;
+        border-bottom: 8px solid #222;
+    }
+
+    .boxes2 {
+        /* border: 2px solid red; */
+        background-color: black;
+        display: flex;
+        flex-direction: row-reverse;
+        width: 100%;
+        height: 70vh;
+        overflow: hidden;
+        border-bottom: 8px solid #222;
+    }
+
+    .box1 {
+        /* border: 2px solid black; */
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        /* align-items: center; */
+        justify-content: center;
+        padding-left: 3rem;
+        padding-right: 13rem;
+    }
+
+    .heading2 {
+        font-family: 'Roboto', sans-serif;
+        color: white;
+        font-size: 3.5rem;
+    }
+
+    .para3 {
+        font-family: 'Roboto', sans-serif;
+        color: white;
+        font-size: 1.5rem;
+        margin-top: 2rem;
+    }
+
+    .box2 {
+        /* border: 2px solid blue; */
+        width: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .box3 {
+        /* border: 2px solid black; */
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        /* align-items: center; */
+        justify-content: center;
+        padding-left: 3rem;
+        padding-right: 10rem;
+    }
+
+    .box4 {
+        /* border: 2px solid blue; */
+        width: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .box5 {
+        /* border: 2px solid black; */
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        /* align-items: center; */
+        justify-content: center;
+        padding-left: 3rem;
+        padding-right: 13rem;
+    }
+
+    .box6 {
+        /* border: 2px solid blue; */
+        width: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .box7 {
+        /* border: 2px solid black; */
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        /* align-items: center; */
+        justify-content: center;
+        padding-left: 3rem;
+        padding-right: 13rem;
+    }
+
+    .box8 {
+        /* border: 2px solid blue; */
+        width: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .boximg1 {
+        width: auto;
+    }
+
+    .boximg2 {
+        width: auto;
+        height: auto;
+    }
+
+    .container3 {
+        background-color: black;
+        color: white;
+        font-family: 'Roboto', sans-serif;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        border-bottom: 8px solid #222;
+    }
+
+    .section {
+        width: 55%;
+    }
+
+    .box {
+        /* border: 2px solid red; */
+        background: #303030;
+        height: 10vh;
+        margin: 1rem 0rem;
+        font-size: 1.6rem;
+        display: flex;
+        align-items: center;
+        padding-left: 2rem;
+    }
+
+    .heading3 {
+        margin-top: 4rem;
+        margin-bottom: 2rem;
+        font-size: 3rem;
+    }
+
+    .input2 {
+        width: 50%;
+        display: flex;
+        margin-bottom: 2rem;
+    }
+
+    .inputbox2 {
+        margin-top: 1rem;
+        height: 9vh;
+        width: 70%;
+        color: gray;
+        font-weight: bold;
+        padding-left: 1rem;
+        font-size: 1rem;
+    }
+
+    .startbtn2 {
+        border: none;
+        border-radius: 5px;
+        background-color: rgb(229, 9, 20);
+        font-family: 'Roboto', sans-serif;
+        font-size: 1rem;
+        height: 9vh;
+        width: 30%;
+        font-size: 1.5rem;
+        margin-top: 1rem;
+        color: white;
+    }
+    @media screen and (max-width:1024px) {
+        select {
+            width: 40%;
+        }
+
+        #signin {
+            width: 40%;
+        }
+
+        .content {
+            padding: 0rem 10rem;
+        }
+
+        .startbtn {
+            font-size: 1.5rem;
+        }
+
+        .box1 {
+            width: 60%;
+            padding-right: 4rem;
+        }
+
+        .box2 {
+            width: 40%;
+        }
+
+        .video1 {
+            width: 90%;
+
+        }
+
+        .heading2 {
+            font-size: 2.9rem;
+        }
+
+        .box3 {
+            width: 60%;
+            padding-right: 2rem;
+        }
+
+        .box4 {
+            width: 40%;
+        }
+
+        .boximg1 {
+            width: 100%;
+        }
+
+        .box5 {
+            width: 60%;
+            padding-right: 4rem;
+        }
+
+        .box6 {
+            width: 40%;
+            padding-right: 2rem;
+        }
+
+        .box7 {
+            width: 60%;
+            padding-right: 4rem;
+        }
+
+        .box8 {
+            width: 40%;
+        }
+
+        .boximg2 {
+            width: 100%;
+        }
+
+        .heading3 {
+            font-size: 4rem;
+        }
+
+        .section {
+            width: 75%;
+        }
+
+        .input2 {
+            width: 70%;
+        }
+    }
+    @media screen and (max-width:768px) {
+        #logo {
+            height: 15vh;
+            margin-left: 1rem;
+        }
+
+        .logo {
+            width: 50%;
+        }
+
+        select {
+            width: 25%;
+        }
+
+        #signin {
+            width: 25%;
+        }
+
+        #btns {
+            width: 50%;
+        }
+
+        .content {
+            padding: 0px 1rem;
+        }
+
+        .heading {
+            font-size: 4rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .para1 {
+            font-size: 1.7rem;
+        }
+
+        .para2 {
+            font-size: 1.7rem;
+            text-align: center;
+            padding: 0rem 7rem;
+        }
+
+        .input {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+
+        .inputbox {
+            width: 76%;
+            height: 9vh;
+            font-size: 1rem;
+        }
+
+        .startbtn {
+            height: 7vh;
+            width: 20%;
+            font-weight: 500;
+            font-size: 1rem;
+        }
+
+        .boxes1 {
+            display: flex;
+            flex-direction: column;
+            padding: 0px 2rem;
+            text-align: center;
+            height: 100vh;
+        }
+
+        .box1 {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            padding-left: 0px;
+            padding-right: 0px;
+            text-align: center;
+        }
+
+        .heading2 {
+            font-size: 2.6rem;
+            margin-top: 3rem;
+        }
+
+        .para3 {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .video1 {
+            width: 80%;
+        }
+
+        .box2 {
+            width: 100%;
+        }
+
+        .boxes2 {
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            padding: 0px 2rem;
+            height: 100vh;
+        }
+
+        .box3 {
+            width: 100%;
+            padding-left: 0px;
+            padding-right: 0px;
+        }
+
+        .box4 {
+            width: 100%;
+        }
+
+        .boximg1 {
+            width: 75%;
+        }
+
+        .box5 {
+            width: 100%;
+            padding-left: 0px;
+            padding-right: 0px;
+        }
+
+        .box6 {
+            width: 100%;
+        }
+
+        .box7 {
+            width: 100%;
+            padding-left: 0px;
+            padding-right: 0px;
+        }
+
+        .box8 {
+            width: 100%;
+        }
+
+        .boximg2 {
+            width: 80%;
+        }
+
+        .heading3 {
+            font-size: 1.8rem;
+            text-align: center;
+        }
+
+        .section {
+            width: 100%;
+        }
+
+        .box {
+            font-size: 1.1rem;
+            height: 8vh;
+        }
+
+        .input2 {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            width: 90%;
+        }
+
+        .inputbox2 {
+            width: 100%;
+            height: 8vh;
+            font-size: .8rem;
+        }
+
+        .startbtn2 {
+            height: 7vh;
+            font-size: 1rem;
+            font-weight: 400;
+        }
+    }
+
+    @media screen and (max-width:480px) {
+        #logo {
+            height: 10vh;
+            margin-left: 1rem;
+        }
+
+        .logo {
+            width: 50%;
+        }
+
+        select {
+            width: 40%;
+        }
+
+        #signin {
+            width: 40%;
+        }
+
+        #btns {
+            width: 50%;
+        }
+
+        .content {
+            padding: 0px 1rem;
+        }
+
+        .heading {
+            font-size: 1.7rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .para1 {
+            font-size: 1.2rem;
+        }
+
+        .para2 {
+            font-size: 1.2rem;
+            text-align: center;
+            padding: 0rem 2rem;
+        }
+
+        .input {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+
+        .inputbox {
+            width: 100%;
+            height: 8vh;
+            font-size: .8rem;
+        }
+
+        .startbtn {
+            height: 7vh;
+            font-size: 1rem;
+            font-weight: 400;
+        }
+
+        .boxes1 {
+            display: flex;
+            flex-direction: column;
+            padding: 0px 2rem;
+            text-align: center;
+            height: 70vh;
+        }
+
+        .box1 {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            padding-left: 0px;
+            padding-right: 0px;
+            text-align: center;
+        }
+
+        .heading2 {
+            font-size: 2rem;
+            margin-top: 2rem;
+        }
+
+        .para3 {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+
+        .video1 {
+            width: 90%;
+        }
+
+        .box2 {
+            width: 100%;
+        }
+
+        .boxes2 {
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            padding: 0px 2rem;
+            height: 70vh;
+        }
+
+        .box3 {
+            width: 100%;
+            padding-left: 0px;
+            padding-right: 0px;
+        }
+
+        .box4 {
+            width: 100%;
+        }
+
+        .boximg1 {
+            width: 80%;
+        }
+
+        .box5 {
+            width: 100%;
+            padding-left: 0px;
+            padding-right: 0px;
+        }
+
+        .box6 {
+            width: 100%;
+        }
+
+        .box7 {
+            width: 100%;
+            padding-left: 0px;
+            padding-right: 0px;
+        }
+
+        .box8 {
+            width: 100%;
+        }
+
+        .boximg2 {
+            width: 80%;
+        }
+
+        .heading3 {
+            font-size: 1.8rem;
+            text-align: center;
+        }
+
+        .section {
+            width: 100%;
+        }
+
+        .box {
+            font-size: 1.1rem;
+            height: 8vh;
+        }
+
+        .input2 {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            width: 90%;
+        }
+
+        .inputbox2 {
+            width: 100%;
+            height: 8vh;
+            font-size: .8rem;
+        }
+
+        .startbtn2 {
+            height: 7vh;
+            font-size: 1rem;
+            font-weight: 400;
+        }
+    }
+</style>
+
+<body>
+    <div class="container1">
+        <div class="navbar">
+            <div class="logo">
+                <img src="https://assets.stickpng.com/images/580b57fcd9996e24bc43c529.png" alt="" id="logo">
+            </div>
+            <div id="btns">
+                <select>
+                    <option value="english">English</option>
+                    <option value="hindi">Hindi</option>
+                </select>
+                <input type="button" value="Sign In" id="signin">
+            </div>
+        </div>
+        <div class="content">
+            <h1 class="heading">Unlimited movies, TV shows and more.</h1>
+            <p class="para1">Watch anywhere. Cancel anytime.</p>
+            <p class="para2">Ready to watch? Enter your email to create or restart your membership.</p>
+            <div class="input">
+                <input type="text" class="inputbox" placeholder="Email address">
+                <input type="button" value="Get Started >" class="startbtn">
+            </div>
+        </div>
+    </div>
+    <div class="container2">
+        <div class="boxes1">
+            <div class="box1">
+                <h1 class="heading2">Enjoy on your Tv.</h1>
+                <p class="para3">Watch on smart TVs, PlayStation, Xbox, Chromecast, Apple TV, Blu-ray players and more.
+                </p>
+            </div>
+            <div class="box2">
+                <video
+                    src="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/video-tv-in-0819.m4v"
+                    autoplay loop class="video1"></video>
+            </div>
+        </div>
+        <div class="boxes2">
+            <div class="box3">
+                <h1 class="heading2">Download your shows to watch offline.</h1>
+                <p class="para3">Save your favourites easily and always have something to watch.
+                </p>
+            </div>
+            <div class="box4">
+                <img src="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/mobile-0819.jpg"
+                    alt="" class="boximg1">
+            </div>
+        </div>
+        <div class="boxes1">
+            <div class="box5">
+                <h1 class="heading2">Watch everywhere.</h1>
+                <p class="para3">Stream unlimited movies and TV shows on your phone, tablet, laptop, and TV.</p>
+            </div>
+            <div class="box6">
+                <video
+                    src="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/video-devices-in.m4v"
+                    autoplay loop class="video1"></video>
+            </div>
+        </div>
+        <div class="boxes2">
+            <div class="box7">
+                <h1 class="heading2">Enjoy on your Tv.</h1>
+                <p class="para3">Send children on adventures with their favourite characters in a space made just for
+                    them—free with your membership.
+                </p>
+            </div>
+            <div class="box8">
+                <img src="https://occ-0-4345-3647.1.nflxso.net/dnm/api/v6/19OhWN2dO19C9txTON9tvTFtefw/AAAABYjXrxZKtrzxQRVQNn2aIByoomnlbXmJ-uBy7du8a5Si3xqIsgerTlwJZG1vMpqer2kvcILy0UJQnjfRUQ5cEr7gQlYqXfxUg7bz.png?r=420"
+                    alt="" class="boximg2">
+            </div>
+        </div>
+    </div>
+    <div class="container3">
+        <h1 class="heading3">Frequently Asked Questions</h1>
+        <div class="section">
+            <div class="box">What is Netflix?</div>
+            <div class="box">How much does Netflix cost?</div>
+            <div class="box">Where can I watch?</div>
+            <div class="box">How do I cancel?</div>
+            <div class="box">What can I watch on Netflix?</div>
+            <div class="box">Is Netflix good for kids?</div>
+        </div>
+        <p class="para2">Ready to watch? Enter your email to create or restart your membership.</p>
+        <div class="input2">
+            <input type="text" class="inputbox2" placeholder="Email address">
+            <input type="button" value="Get Started >" class="startbtn2">
+        </div>
+    </div>
+</body>
+
+</html>
